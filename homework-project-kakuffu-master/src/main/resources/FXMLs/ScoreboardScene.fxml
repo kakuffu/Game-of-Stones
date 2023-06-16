@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="412.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameOfStones.Controllers.ScoreboardSceneController">
+    <children>
+        <BorderPane prefHeight="447.0" prefWidth="600.0">
+            <center>
+                <VBox alignment="TOP_CENTER" maxHeight="362.0" minHeight="276.0" prefHeight="276.0" prefWidth="600.0"  BorderPane.alignment="TOP_CENTER">
+                    <children>
+                        <TableView fx:id="tableView" maxWidth="503.0" minWidth="150.0" prefHeight="395.0" prefWidth="503.0">
+                            <columns>
+                                <TableColumn fx:id="firstPlayerCol" prefWidth="118.0" text="First Player" />
+                                <TableColumn fx:id="secondPlayerCol" minWidth="7.0" prefWidth="111.0" text="Second Player" />
+                                <TableColumn fx:id="winnerCol" prefWidth="114.0" text="Winner" />
+                                <TableColumn fx:id="dateCol" minWidth="100.0" prefWidth="100.0" text="Date" />
+                                <TableColumn fx:id="movesCol" minWidth="67.0" prefWidth="67.0" text="Moves" />
+                            </columns>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </TableView>
+                    </children>
+                </VBox>
+            </center>
+            <bottom>
+                <HBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="mainMenuButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="40.0" prefWidth="125.0"  text="Main Menu" textFill="#e00b96">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </bottom>
+            <top>
+                <Label text="Scoreboard" textFill="#e40478" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Comic Sans MS" size="43.0" />
+                    </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+                </Label>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>

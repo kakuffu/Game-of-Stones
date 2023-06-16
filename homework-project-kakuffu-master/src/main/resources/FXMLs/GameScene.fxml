@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 18;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameOfStones.Controllers.GameController">
+    <center>
+        <GridPane fx:id="gameBoardPane" gridLinesVisible="true" prefHeight="510.0" prefWidth="510.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleMouseClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+        </GridPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="20.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="20.0" />
+            </BorderPane.margin>
+            <Button fx:id="giveUpButton" mnemonicParsing="false" onAction="#buttonPressed" text="Give Up" textAlignment="CENTER" textFill="#d94abc" wrapText="true">
+                <font>
+                    <Font name="Comic Sans MS Bold" size="20.0" />
+                </font>
+            </Button>
+            <Button fx:id="endTurnButton" mnemonicParsing="false" onAction="#buttonPressed" text="End Turn" textAlignment="CENTER" textFill="#d94abc" wrapText="true">
+                <font>
+                    <Font name="Comic Sans MS Bold" size="20.0" />
+                </font>
+            </Button>
+         <Button fx:id="playAgainButton" layoutX="205.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonPressed" text="Play Again" textAlignment="CENTER" textFill="#d94abc" wrapText="true">
+            <font>
+               <Font name="Comic Sans MS Bold" size="20.0" />
+            </font>
+            <HBox.margin>
+               <Insets right="60.0" />
+            </HBox.margin>
+         </Button>
+        </HBox>
+    </bottom>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <top>
+      <HBox fx:id="changeTurn" alignment="CENTER" prefHeight="24.0" prefWidth="510.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="turnLabel" text="Label" />
+            <Label text="stones left on board">
+               <graphic>
+                  <TextField fx:id="numberOfStonesField" editable="false" prefHeight="39.0" prefWidth="48.0" />
+               </graphic>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <left>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="directionButtonError" prefHeight="27.0" prefWidth="145.0" textFill="RED" />
+            <Button fx:id="rightLeftButton" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="39.0" prefWidth="105.0" text="Right/Left" textFill="#c92baa">
+               <VBox.margin>
+                  <Insets right="10.0" top="20.0" />
+               </VBox.margin></Button>
+            <Button fx:id="upDownButton" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="39.0" prefWidth="106.0" text="Up/Down" textFill="#c92baa">
+               <VBox.margin>
+                  <Insets right="10.0" top="20.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
